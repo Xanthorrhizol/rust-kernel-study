@@ -1,0 +1,36 @@
+[package]
+name = "rust-kernel-study"
+version = "0.1.0"
+edition = "2024"
+description = "Playground of linux kernel with Rust"
+
+[lib]
+name = "rk_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "bindgen"
+path = "src/bindgen.rs"
+
+[[bin]]
+name = "autocxx"
+path = "src/autocxx.rs"
+
+[[bin]]
+name = "sharedmem_writer"
+path = "src/sharedmem_writer.rs"
+
+[[bin]]
+name = "sharedmem_reader"
+path = "src/sharedmem_reader.rs"
+
+[build-dependencies]
+autocxx-build = "0.30.0"
+bindgen = "0.72.1"
+miette = { version = "7.6.0", features = ["fancy"] }
+
+[dependencies]
+autocxx = "0.30.0"
+cxx = "1.0.180"
+libc = "0.2.175"
+shared_memory = "0.12.4"
