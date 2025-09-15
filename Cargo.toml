@@ -24,6 +24,15 @@ path = "src/sharedmem_writer.rs"
 name = "sharedmem_reader"
 path = "src/sharedmem_reader.rs"
 
+[[bin]]
+name = "mmap"
+path = "src/mmap.rs"
+
+[[bin]]
+name = "ioctl"
+path = "src/ioctl.rs"
+
+
 [build-dependencies]
 autocxx-build = "0.30.0"
 bindgen = "0.72.1"
@@ -33,4 +42,6 @@ miette = { version = "7.6.0", features = ["fancy"] }
 autocxx = "0.30.0"
 cxx = "1.0.180"
 libc = "0.2.175"
+memmap = "0.7.0"
 shared_memory = "0.12.4"
+structopt = "0.3.26"
