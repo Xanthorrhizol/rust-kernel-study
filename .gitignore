@@ -1,3 +1,9 @@
 /target
 hello.o
 libhello.so
+initramfs.cpio.gz
+/initramfs
+/linux
+/busybox
+/busybox_install_result
+/kernel_module
