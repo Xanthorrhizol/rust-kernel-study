@@ -34,6 +34,7 @@ if [ ! -d /mnt ]; then
 fi
 mount -t 9p -o trans=virtio rust_modules /mnt
 EOF
+chmod +x mount_rust_modules.sh
 command -v cpio >/dev/null
 if [ $? -ne 0 ]; then
   sudo pacman -S cpio
