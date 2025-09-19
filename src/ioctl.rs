@@ -1,38 +1,8 @@
 extern crate libc;
 
 use libc::{STDOUT_FILENO, write};
+use rk_lib::get_terminal_size;
 use std::ffi::CString;
-use std::io;
-use std::os::unix::io::AsRawFd;
-
-const TIOCGWINSZ: libc::c_ulong = 0x5413;
-
-#[repr(C)]
-struct Winsize {
-    ws_row: libc::c_ushort,
-    ws_col: libc::c_ushort,
-    ws_xpixel: libc::c_ushort,
-    ws_ypixel: libc::c_ushort,
-}
-
-fn get_terminal_size() -> Result<(libc::c_ushort, libc::c_ushort), io::Error> {
-    let ws = Winsize {
-        ws_row: 0,
-        ws_col: 0,
-        ws_xpixel: 0,
-        ws_ypixel: 0,
-    };
-
-    let fd = io::stdout().as_raw_fd();
-
-    let result = unsafe { libc::ioctl(fd, TIOCGWINSZ, &ws) };
-
-    if result == -1 {
-        Err(io::Error::last_os_error())
-    } else {
-        Ok((ws.ws_row, ws.ws_col))
-    }
-}
 
 fn main() {
     let (rows, cols) = match get_terminal_size() {
