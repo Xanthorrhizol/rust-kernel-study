@@ -6,4 +6,10 @@ initramfs.cpio.gz
 /linux
 /busybox
 /busybox_install_result
-/kernel_module
+/kernel_module/**/*.ko
+/kernel_module/**/*.cmd
+/kernel_module/**/*.mod
+/kernel_module/**/*.mod.c
+/kernel_module/**/*.o
+/kernel_module/**/*.order
+/kernel_module/**/*.symvers
