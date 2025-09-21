@@ -14,6 +14,7 @@ fi
 echo "1. Enable Rust support in the kernel configuration"
 echo "2. Enable all as 'M' Kernel hacking - Sample kernel code -> Rust samples"
 echo "  (!) Host programs: '*'"
+echo "3. Enable Kernel hacking - printk and dmesg options - Enable dynamic printk() support"
 read -p "Press [Enter] to continue..."
 make menuconfig
 make

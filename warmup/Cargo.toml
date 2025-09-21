@@ -1,8 +1,8 @@
 [package]
-name = "rust-kernel-study"
+name = "warmup"
 version = "0.1.0"
 edition = "2024"
-description = "Playground of linux kernel with Rust"
+description = "Warmup to various Rust FFI and IPC techniques"
 
 [lib]
 name = "rk_lib"

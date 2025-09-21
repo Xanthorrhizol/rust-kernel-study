@@ -1,0 +1,25 @@
+{
+  "sysroot_src": "/home/juyun/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library",
+  "crates": [
+    {
+      "display_name": "kernel",
+      "root_module": "/home/juyun/study/rust-kernel/linux/rust/kernel/lib.rs",
+      "edition": "2024",
+      "cfg": ["kernel", "no_std"],
+      "deps": [],
+      "is_workspace_member": true
+    },
+    {
+      "display_name": "rust-kernel",
+      "root_module": "/home/juyun/study/rust-kernel/kernel_module/rust/lib.rs",
+      "edition": "2024",
+      "deps": [
+        {
+          "crate": 0,
+          "name": "kernel"
+        }
+      ],
+      "cfg": ["kernel", "no_std"]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
-/target
-hello.o
-libhello.so
+/warmup/target
+/rust-kernel/target
+*.o
+*.so
 initramfs.cpio.gz
 /initramfs
 /linux
